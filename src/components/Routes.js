@@ -55,7 +55,10 @@ const Routes = () => {
       <Route exact path="/locations/:slug">
         <RevenueCenterPage />
       </Route>
-      <Route path="/menu/:slug">
+      <Route exact path="/menu/:slug">
+        <MenuPage />
+      </Route>
+      <Route path="/menu/:slug/:revenueCenterId">
         <MenuPage />
       </Route>
       <Route path="/join/:token">
