@@ -59,7 +59,8 @@
   padding: 0 0 $padding $padding;
   @include breakpoint(mobile_both) {
     padding: 0 0 $padding-mobile $padding-mobile;
-    flex-wrap: nowrap;
+    // For stacking instead of side scroll
+    // flex-wrap: nowrap;
     overflow-x: scroll;
   }
 }
@@ -75,7 +76,8 @@
     width: 33.33333%;
   }
   @include breakpoint(mobile_both) {
-    width: 24rem;
+    // works with above for stacking full width vertically
+    width: 100%;
     flex-shrink: 0;
     padding: $padding-mobile $padding-mobile 0 0;
   }
