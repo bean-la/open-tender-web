@@ -125,31 +125,29 @@ const Menu = () => {
             {/* Show list of sub-revenuecenters */}
             <Route exact path={path}>
               <>
-                <div className="menu__rcs">
-                  <div className="menu__rcs__header ot-dark">
-                    <div className="container">
-                      <p className="menu__rcs__title ot-preface">
-                        Please select a vendor
-                      </p>
+                {revenueCenters && (
+                  <div className="menu__rcs">
+                    <div className="menu__rcs__header ot-dark">
+                      <div className="container">
+                        <p className="menu__rcs__title ot-preface">
+                          Please select a vendor
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="menu__rcs__items slide-up">
-                    {revenueCenters &&
-                      revenueCenters.map((i) => (
+
+                    <div className="menu__rcs__items slide-up">
+                      {revenueCenters.map((i) => (
                         <MenuRevenueCenter
                           key={i.revenue_center_id}
                           revenueCenter={i}
                         />
                       ))}
+                    </div>
                   </div>
-                </div>
+                )}
                 {visible.length > 0 && (
                   <>
-                    <StickyNav
-                      revenueCenter={revenueCenter}
-                      items={navItems}
-                      offset={-90}
-                    />
+                    <StickyNav items={navItems} offset={-90} />
                     <MenuCategories categories={visible} />
                   </>
                 )}
