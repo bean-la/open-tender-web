@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { useSelector } from 'react-redux'
 import { isMobile } from 'react-device-detect'
 
@@ -64,9 +64,9 @@ const Menu = () => {
 
   // TODO: refactor selected to be powered by Router
   // Selected Sub-RevenueCenter
-  const [selected, setSelected] = useState(null)
+  // const [selected, setSelected] = useState(null)
   // visible categories
-  const [visible, setVisible] = useState(categories)
+  const [visible] = useState(categories)
   // combine categories for sub-nav
   const navItems = visible ? visible.map((i) => i.name) : []
 
