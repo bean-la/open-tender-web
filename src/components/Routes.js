@@ -7,6 +7,7 @@ import ConfirmationPage from './ConfirmationPage'
 import OrderPage from './OrderPage'
 import RevenueCentersPage from './RevenueCentersPage'
 import RevenueCenterPage from './RevenueCenterPage'
+import LoginPage from './LoginPage'
 import AccountPage from './AccountPage'
 import AccountAddressesPage from './AccountAddressesPage'
 import AccountFavoritesPage from './AccountFavoritesPage'
@@ -66,6 +67,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/checkout">
         <CheckoutPage />
+      </Route>
+      <Route exact path="/login">
+        <LoginPage />
       </Route>
       <Route exact path="/account">
         <AccountPage />

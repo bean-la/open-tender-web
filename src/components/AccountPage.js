@@ -55,7 +55,8 @@ const AccountPage = () => {
   }, [])
 
   useEffect(() => {
-    if (!token) return history.push('/')
+    if (!token) return history.push('/login')
+
     dispatch(fetchCustomer({ token }))
   }, [token, dispatch, history])
 
