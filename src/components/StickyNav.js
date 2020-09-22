@@ -4,13 +4,14 @@ import { isMobile } from 'react-device-detect'
 import { Link } from 'react-scroll'
 import { slugify } from '@open-tender/js'
 import { Button } from '@open-tender/components'
+import { Link as DOMLink } from 'react-router-dom'
 
 import iconMap from './iconMap'
 
 const StickyNav = ({
   items,
   revenueCenter,
-  change,
+  // change,
   offset = -100,
   duration = 500,
 }) => {
@@ -35,11 +36,11 @@ const StickyNav = ({
     }
   }, [topOffset])
 
-  const handleChange = (evt) => {
-    evt.preventDefault()
-    change(null)
-    evt.target.blur()
-  }
+  // const handleChange = (evt) => {
+  //   evt.preventDefault()
+  //   change(null)
+  //   evt.target.blur()
+  // }
 
   return (
     <div className={stickyClass} ref={stickyRef}>
@@ -54,12 +55,13 @@ const StickyNav = ({
                 />
               </div>
               <div className="sticky__filter__content">
-                <Button
-                  text="Switch"
-                  icon={iconMap['RefreshCw']}
-                  onClick={handleChange}
-                  classes="ot-btn--small ot-btn--secondary ot-font-size-small"
-                />
+                <DOMLink to="/locations">
+                  <Button
+                    text="Switch"
+                    icon={iconMap['RefreshCw']}
+                    classes="ot-btn--small ot-btn--secondary ot-font-size-small"
+                  />
+                </DOMLink>
               </div>
             </div>
           )}
